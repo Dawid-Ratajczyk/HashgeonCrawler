@@ -31,7 +31,7 @@ namespace HashgeonCrawler
         }
         public void SetColorPoint(Point set, int value)
         {
-            if (IsInside(set.x, set.y)) { this.color[set.x][set.y] = value; }
+            if (IsInside(set.x, set.y)) { this.colors[set.x][set.y] = value; }
         }
         public void SetBackPoint(Point set, int value)
         {
