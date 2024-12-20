@@ -54,5 +54,10 @@ namespace HashgeonCrawler
             }
             else return "X";
         }
+        public static void SetFont()
+        {
+  
+
+        }
     }
 }
