@@ -8,7 +8,7 @@ namespace HashgeonCrawler
 {
     internal class Visual
     {
-        public static List<string> symbols = new List<string>() { " ", "█" };
+        public static List<string> symbols = new List<string>() { " ", "█", "Δ" };
         public static void SetBackgroundColour(int id)
         {
             switch (id)

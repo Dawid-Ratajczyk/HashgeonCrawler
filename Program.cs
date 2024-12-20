@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 
 namespace HashgeonCrawler
 {
@@ -8,7 +9,12 @@ namespace HashgeonCrawler
         public static RenderEngine renderEngine=new RenderEngine();
         static void Main(string[] args)
         {
+            Setup();
             game.Start();
+        }
+        static void Setup()
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
         }
     }
 }

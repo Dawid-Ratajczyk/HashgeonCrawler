@@ -6,10 +6,10 @@ using System.Threading;
 
 namespace HashgeonCrawler
 {
-    internal class Player
+    internal class Player : Object
     {
 
-        public int xPos, yPos, vision, moves;
+        public int vision, moves;
 
         public Player()
         {
@@ -28,23 +28,11 @@ namespace HashgeonCrawler
                 case "S": moveY = 1; break;
                 case "A": moveX = -1; break;
             }
-            if(moveX != 0 || moveY != 0)
-            {
-                Move(moveX, moveY);
+            if(moveX != 0 || moveY != 0) {this.Move(moveX, moveY);
             }
             
         }
-        public void Move(int moveX,int moveY)
-        {
-            int nextSpotX = moveX + Game.Player.xPos, nextSpotY = Game.Player.yPos + moveY;
 
-            //move to empty spot
-            if (Game.World.Plane.IsInside(nextSpotX, nextSpotY) )
-            {
-
-                Game.Player.xPos += moveX;
-                Game.Player.yPos += moveY;
-            }
-        }
+        
     }
 }

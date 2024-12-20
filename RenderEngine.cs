@@ -7,7 +7,7 @@ namespace HashgeonCrawler
 {
     internal class RenderEngine
     {
-        int renderX = 120, renderY = 30;
+        int renderX = 60, renderY = 29;
         List<List<string>> symbols = new List<List<string>>();
         List<List<int>> symbolColors = new List<List<int>>();
         List<List<int>> backColors = new List<List<int>>();
@@ -26,6 +26,7 @@ namespace HashgeonCrawler
                         symbols[i].Add(Visual.symbols[1]);
                     }
                     else symbols[i].Add(" ");
+                    
                     symbolColors[i].Add(1);
                     backColors[i].Add(0);
                 }
@@ -55,8 +56,9 @@ namespace HashgeonCrawler
                     if(IsInside(new Point(x + corner.x,y + corner.y)))
                     {
                         this.symbols[x + corner.x][y + corner.y] = Visual.FromIntToStringTranslation(grid.things[x][y]);
-                    }
-                    
+                        this.symbolColors[x + corner.x][y + corner.y] = grid.colors[x][y];
+                        this.backColors[x + corner.x][y + corner.y] = grid.background[x][y];    
+                    }  
                 }
             }
         }

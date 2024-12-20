@@ -20,10 +20,11 @@ namespace HashgeonCrawler
         }
         public void Setup()
         {
-          World.Plane.SetSize(3,3);
+          World.Plane.SetSize(100,100);
           World.Plane.ResetGrid();
           
-          Player.xPos = 0; Player.yPos = 0; Player.vision=11;
+          Player.xPos = 0; Player.yPos = 0; Player.vision=13;
+          World.Plane.SetPlanePoint(new Point(Player.xPos, Player.yPos), 2);
           Program.renderEngine.SetBlankFrame(true);
            
         }
@@ -33,21 +34,18 @@ namespace HashgeonCrawler
         }
         public void PlayLoop()
         {
-            
             while (gameRunning)
             {
-
-
                 //render
                 Grid gameImage = World.Plane.GetSection(new Point(Player.xPos, Player.yPos), Player.vision);
-                Program.renderEngine.ImprintGrid(gameImage, new Point(2, 2));
+                Program.renderEngine.ImprintGrid(gameImage, new Point(1,1));
                 Program.renderEngine.RenderFrame();
                 Console.WriteLine(Player.xPos + " " + Player.yPos);
                 Player.Action();
       
                 //refresh
                 Technical.CleanBuffer();
-                Thread.Sleep(refreshRate);
+                Thread.Sleep(100);
                 Console.Clear();
             }
         }
