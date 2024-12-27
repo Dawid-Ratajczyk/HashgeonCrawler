@@ -4,10 +4,11 @@ using System.Text;
 
 namespace HashgeonCrawler
 {
-    internal class Object
+    public class Object
     {
         public Object() { }
-        public int xPos, yPos;
+        public int xPos, yPos,id,color;
+        
         public string name,symbol;
         public void SetPosition(int X, int Y){  this.xPos = X; this.yPos = Y; }
         public void Move(int moveX, int moveY)
@@ -18,5 +19,6 @@ namespace HashgeonCrawler
                 Game.World.Plane.ChangePosition(nextSpotX, nextSpotY, this);
             }
         }
+        public virtual void Action() { }   
     }
 }

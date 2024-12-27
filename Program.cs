@@ -24,7 +24,7 @@ namespace HashgeonCrawler
         {
             
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-            ConsoleHelper.SetCurrentFont("Consolas", 29);
+            ConsoleHelper.SetCurrentFont("Consolas", 27);
             Console.SetWindowSize(Console.LargestWindowWidth, Console.LargestWindowHeight);
         }
     }

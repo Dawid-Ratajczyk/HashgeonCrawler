@@ -15,16 +15,28 @@ namespace HashgeonCrawler
         
         public void ChangePosition(int toX,int toY, Object obj)
         {
-            this.things[toX][toY] = this.things[obj.xPos][obj.yPos];
-            this.things[obj.xPos][obj.yPos] = 0;
-            obj.SetPosition(toX,toY);
+            if(this.things[obj.xPos][obj.yPos] != this.things[toX][toY])
+            {
+                this.things[toX][toY] = this.things[obj.xPos][obj.yPos];
+                this.things[obj.xPos][obj.yPos] = 0;
+                this.colors[toX][toY] = this.colors[obj.xPos][obj.yPos];
+                this.colors[obj.xPos][obj.yPos] = 0;
+                obj.SetPosition(toX, toY);
+            }
         }
         public void ChangePosition(int toX, int toY, int fromX, int fromY)
         {
-            this.things[toX][toY] = this.things[fromX][fromY];
-            this.things[fromX][fromY] = 0;
+            if (this.things[fromX][fromY] != this.things[toX][toY])
+            {
+                this.things[toX][toY] = this.things[fromX][fromY];
+                this.things[fromX][fromY] = 0;
+
+                this.colors[toX][toY] = this.colors[fromX][fromY];
+                this.colors[fromX][fromY] = 0;
+            }
         }
-       
+ 
+
         public void SetPlanePoint(Point set,int value)
         { 
             if(IsInside(set.x,set.y)){ this.things[set.x][set.y] = value; }

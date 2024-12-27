@@ -4,8 +4,9 @@ using System.Text;
 
 namespace HashgeonCrawler
 {
-    internal class Technical
+    static class Technical
     {
+        static Random randomizer = new Random();
         static public void CleanBuffer() { while (Console.KeyAvailable) { Console.ReadKey(true); } }
         static public string KeyPress()
         {
@@ -15,5 +16,7 @@ namespace HashgeonCrawler
             return key;
 
         }
+        static public int RandomNumber(int min, int max){ return randomizer.Next(min, max+1);}
+
     }
 }

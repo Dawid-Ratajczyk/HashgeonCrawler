@@ -15,5 +15,10 @@ namespace HashgeonCrawler
             if (y < 0) this.y = 0;
             else this.y = y;
         }
+        public void Set(int x,int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
     }
 }

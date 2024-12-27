@@ -17,6 +17,7 @@ namespace HashgeonCrawler
         }
         public void Action()
         {
+            id = 3;
             int moveX = 0, moveY = 0;
             string key = Technical.KeyPress();
 
